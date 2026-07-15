@@ -1403,7 +1403,8 @@ outofcmd:
 /**
 // It is possible to do a DUP in the compile code of returnf
 **/
-				Lstrcpy(_proc[_rx_proc].arg.r, STACKTOP);
+				if (_proc[_rx_proc].arg.r)
+					Lstrcpy(_proc[_rx_proc].arg.r, STACKTOP); /* Copy result if caller wants it. */
 			else {
 				/* is the Variable space private? */
 				/* proc: PROCEDURE */
